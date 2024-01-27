@@ -10,6 +10,9 @@ public class Portal : Collidable
     {
         if (coll.name == "Player")
         {
+            // Save state before new scene
+            GameManager.instance.SaveState();
+            
             // Teleport the player
             string sceneName = sceneNames[Random.Range(0, sceneNames.Length)];
 

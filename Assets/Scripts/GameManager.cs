@@ -17,7 +17,7 @@ public class GameManager : MonoBehaviour
 
         // Delete SaveState
         // PlayerPrefs.DeleteAll();
-        
+
         instance = this;
         SceneManager.sceneLoaded += LoadState;
         DontDestroyOnLoad(gameObject);
@@ -30,13 +30,20 @@ public class GameManager : MonoBehaviour
     public List<int> xpTable;
 
     // References
-
     public Player player;
     // public weapon...
+    public FloatingTextManager floatingTextManager;
 
     // Logic
     public int gold;
     public int experience;
+
+
+    // Floating text
+    public void ShowText(string msg, int fontSize, Color color, Vector3 position, Vector3 motion, float duration)
+    {
+        floatingTextManager.Show(msg, fontSize, color, position, motion, duration);
+    }
 
     // Save state
     /*

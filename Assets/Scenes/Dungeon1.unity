@@ -13594,10 +13594,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4aa53205bb0c4177a643db68d562d00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lookAt: {fileID: 1764456841}
+  lookAt: {fileID: 1509328131}
   boundX: 0.15
   boundY: 0.05
---- !u!1001 &1764456840
+--- !u!1001 &1509328130
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -13654,15 +13654,15 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 37e957d38ae774504a8b266ce0ef6db2, type: 3}
---- !u!4 &1764456841 stripped
+--- !u!4 &1509328131 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7420343769518955015, guid: 37e957d38ae774504a8b266ce0ef6db2, type: 3}
-  m_PrefabInstance: {fileID: 1764456840}
+  m_PrefabInstance: {fileID: 1509328130}
   m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 1325948737}
-  - {fileID: 1764456840}
   - {fileID: 1048108940}
+  - {fileID: 1509328130}

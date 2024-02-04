@@ -31,7 +31,7 @@ public class GameManager : MonoBehaviour
 
     // References
     public Player player;
-    // public weapon...
+    public Weapon weapon;
     public FloatingTextManager floatingTextManager;
 
     // Logic
@@ -43,6 +43,23 @@ public class GameManager : MonoBehaviour
     public void ShowText(string msg, int fontSize, Color color, Vector3 position, Vector3 motion, float duration)
     {
         floatingTextManager.Show(msg, fontSize, color, position, motion, duration);
+    }
+
+    // Upgrade weapon
+    public bool TryUpgradeWeapon()
+    {
+        // weapon max level?
+        if (weaponPrices.Count <= weapon.weaponLevel)
+            return false;
+
+        if (gold >= weaponPrices[weapon.weaponLevel])
+        {
+            gold -= weaponPrices[weapon.weaponLevel];
+            weapon.UpgradeWeapon();
+            return true;
+        }
+
+        return false;
     }
 
     // Save state
@@ -60,7 +77,7 @@ public class GameManager : MonoBehaviour
 
         save += gold.ToString() + "|";
         save += experience.ToString() + "|";
-        save += "0";
+        save += weapon.weaponLevel.ToString();
 
         // or string interpolation $"{0}|{gold}|{experience}|{0}";
 
@@ -78,7 +95,7 @@ public class GameManager : MonoBehaviour
         // Change preferedSkin
         gold = int.Parse(data[1]);
         experience = int.Parse(data[2]);
-        // Change weaponLevel
+        weapon.SetWeaponLevel(int.Parse(data[3]));
 
         // SceneManager.sceneLoaded -= LoadState;
         Debug.Log("Load State");

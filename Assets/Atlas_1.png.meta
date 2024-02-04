@@ -1307,7 +1307,7 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1315,6 +1315,48 @@ TextureImporter:
       bones: []
       spriteID: a596ff218cda34ae28067cba94d2279b
       internalID: -248172135
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Atlas_1_0
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 71
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3a012677ae74464e8b7a31bc7ae685d
+      internalID: -1241638924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: menu_0
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 64
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d1b3fa4aedd54f838646fd4627ba760
+      internalID: 526787315
       vertices: []
       indices: 
       edges: []
@@ -1330,6 +1372,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
+      Atlas_1_0: -1241638924
       chest_0: -1509816314
       chest_1: -1998494292
       crate_0: -1800376612
@@ -1355,6 +1398,7 @@ TextureImporter:
       healing_0: -1301141921
       healing_1: -269739039
       healing_2: 1354264662
+      menu_0: 526787315
       pillar_0: 1975817075
       pillar_1: -622309716
       pillar_2: -954363370

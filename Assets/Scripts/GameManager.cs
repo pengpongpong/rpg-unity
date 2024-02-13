@@ -24,6 +24,7 @@ public class GameManager : MonoBehaviour
 
         instance = this;
         SceneManager.sceneLoaded += LoadState;
+        SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
     // Resources
@@ -118,14 +119,15 @@ public class GameManager : MonoBehaviour
     public void OnLevelUp()
     {
         player.OnLevelUp();
+        OnHitpointChange();
     }
+    
+    // On Scene loaded
+    public void OnSceneLoaded(Scene s, LoadSceneMode mode){
+        player.transform.position = GameObject.Find("SpawnPoint").transform.position;
+    }
+    
     // Save state
-    /*
-    * Int preferedSkin
-    * Int gold
-    * Int experience
-    * Int weaponLevel
-    */
     public void SaveState()
     {
         string save = "";
@@ -144,6 +146,8 @@ public class GameManager : MonoBehaviour
 
     public void LoadState(Scene s, LoadSceneMode mode)
     {
+        SceneManager.sceneLoaded -= LoadState;
+
         if (!PlayerPrefs.HasKey("SaveState"))
             return;
 
@@ -158,7 +162,5 @@ public class GameManager : MonoBehaviour
             player.SetLevel(GetCurrentLevel());
 
         weapon.SetWeaponLevel(int.Parse(data[3]));
-
-        player.transform.position = GameObject.Find("SpawnPoint").transform.position;
     }
 }

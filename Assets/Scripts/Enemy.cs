@@ -8,8 +8,8 @@ public class Enemy : Mover
     public int xpValue = 1;
 
     // Logic
-    public float triggerLength = 0.3f;
-    public float chaseLength = 1f;
+    public float triggerLength = 1.0f;
+    public float chaseLength = 1.0f;
     private bool chasing;
     private bool collidingWithPlayer;
     private Transform playerTransform;
@@ -35,6 +35,7 @@ public class Enemy : Mover
         // Is the player in range?
         if (Vector3.Distance(playerTransform.position, startingPosition) < chaseLength)
         {
+
             if (Vector3.Distance(playerTransform.position, startingPosition) < triggerLength)
             {
                 chasing = true;

@@ -67,7 +67,6 @@ public class Weapon : Collidable
     {
         anim.SetTrigger("Swing");
 
-
     }
 
     public void UpgradeWeapon()

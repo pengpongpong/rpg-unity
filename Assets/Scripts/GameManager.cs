@@ -92,7 +92,7 @@ public class GameManager : MonoBehaviour
 
         return xp;
     }
-    
+
     public void GrantXp(int xp)
     {
         int currLevel = GetCurrentLevel();
@@ -104,7 +104,7 @@ public class GameManager : MonoBehaviour
 
     public void OnLevelUp()
     {
-        Debug.Log("Level up!");
+        player.OnLevelUp();
     }
     // Save state
     /*
@@ -138,10 +138,14 @@ public class GameManager : MonoBehaviour
 
         // Change preferedSkin
         gold = int.Parse(data[1]);
+
+        // Experience
         experience = int.Parse(data[2]);
+        if (GetCurrentLevel() != 1)
+            player.SetLevel(GetCurrentLevel());
+
         weapon.SetWeaponLevel(int.Parse(data[3]));
 
-        // SceneManager.sceneLoaded -= LoadState;
-        Debug.Log("Load State");
+        player.transform.position = GameObject.Find("SpawnPoint").transform.position;
     }
 }

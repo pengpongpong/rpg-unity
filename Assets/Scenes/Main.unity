@@ -551,7 +551,6 @@ MonoBehaviour:
     maxNormalAngle: 0
   sceneNames:
   - Dungeon1
-  - Main
 --- !u!61 &1397468574
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -8989,7 +8988,7 @@ MonoBehaviour:
   - {fileID: 397836091, guid: 1e091cde00a5b4c6faee83539b0f993a, type: 3}
   - {fileID: 838763944, guid: 1e091cde00a5b4c6faee83539b0f993a, type: 3}
   weaponPrices: 0a00000014000000320000006400000096000000fa000000
-  xpTable: 
+  xpTable: 050000000a0000000f000000190000002300000032000000460000005a0000006e00000082000000
   player: {fileID: 1679280690}
   weapon: {fileID: 1277373183}
   floatingTextManager: {fileID: 860606789}

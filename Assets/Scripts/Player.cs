@@ -6,13 +6,19 @@ using UnityEngine;
 public class Player : Mover
 {
     private SpriteRenderer spriteRenderer;
+    protected Animator animator;
 
     protected override void Start()
     {
         base.Start();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        animator = GetComponent<Animator>();
+    }
 
-        DontDestroyOnLoad(gameObject);
+    protected override void ReceiveDamage(Damage dmg)
+    {
+        base.ReceiveDamage(dmg);
+        GameManager.instance.OnHitpointChange();
     }
     private void FixedUpdate()
     {
@@ -21,6 +27,15 @@ public class Player : Mover
         float y = Input.GetAxisRaw("Vertical");
 
         UpdateMotor(new Vector3(x, y, 0));
+
+        if (y != 0 || x != 0)
+        {
+            animator.SetBool("Run", true);
+        }
+        else
+        {
+            animator.SetBool("Run", false);
+        }
     }
 
     public void SwapSprite(int skinId)
@@ -50,5 +65,6 @@ public class Player : Mover
             hitpoint = maxHitpoint;
 
         GameManager.instance.ShowText("+" + healingAmount + " hp", 25, Color.green, transform.position, Vector3.up * 30, 1.0f);
+        GameManager.instance.OnHitpointChange();
     }
 }

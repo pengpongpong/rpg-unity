@@ -12,6 +12,8 @@ public class GameManager : MonoBehaviour
         if (GameManager.instance != null)
         {
             Destroy(gameObject);
+            Destroy(hud);
+            Destroy(menu);
             Destroy(player.gameObject);
             Destroy(floatingTextManager.gameObject);
             return;
@@ -22,7 +24,6 @@ public class GameManager : MonoBehaviour
 
         instance = this;
         SceneManager.sceneLoaded += LoadState;
-        DontDestroyOnLoad(gameObject);
     }
 
     // Resources
@@ -35,6 +36,9 @@ public class GameManager : MonoBehaviour
     public Player player;
     public Weapon weapon;
     public FloatingTextManager floatingTextManager;
+    public RectTransform hitpointBar;
+    public GameObject hud;
+    public GameObject menu;
 
     // Logic
     public int gold;
@@ -62,6 +66,13 @@ public class GameManager : MonoBehaviour
         }
 
         return false;
+    }
+
+    // Hitpoint bar
+    public void OnHitpointChange()
+    {
+        float ratio = (float)player.hitpoint / (float)player.maxHitpoint;
+        hitpointBar.localScale = new Vector3(1, ratio, 1);
     }
 
     // Experience System

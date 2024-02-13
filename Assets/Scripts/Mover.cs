@@ -10,7 +10,6 @@ public abstract class Mover : Fighter
     protected float ySpeed = 0.75f;
     protected float xSpeed = 1.0f;
 
-
     protected virtual void Start()
     {
         boxCollider = GetComponent<BoxCollider2D>();

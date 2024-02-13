@@ -1328,7 +1328,7 @@ TextureImporter:
         width: 6
         height: 8
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1349,7 +1349,7 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1357,6 +1357,48 @@ TextureImporter:
       bones: []
       spriteID: 8d1b3fa4aedd54f838646fd4627ba760
       internalID: 526787315
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_0
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 48
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a1f87b9f383446309b1661b2d5bf0df
+      internalID: -1087202783
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy_1
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2395928bb27184bb1aa61aeef4dd5452
+      internalID: 984596435
       vertices: []
       indices: 
       edges: []
@@ -1373,6 +1415,7 @@ TextureImporter:
     secondaryTextures: []
     nameFileIdTable:
       Atlas_1_0: -1241638924
+      boss_0: -1087202783
       chest_0: -1509816314
       chest_1: -1998494292
       crate_0: -1800376612
@@ -1380,6 +1423,7 @@ TextureImporter:
       crate_3: -1329988765
       crate_4: 801837752
       enemy_0: -248172135
+      enemy_1: 984596435
       floor_0: -485646697
       floor_0_0: -940943251
       floor_0_1: 574488360
